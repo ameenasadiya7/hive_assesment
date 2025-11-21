@@ -1,11 +1,11 @@
-// Fully safe rational solver using BigInt fractions
+
 
 const fs = require("fs");
 const path = require("path");
 
 const DIGITS = "0123456789abcdefghijklmnopqrstuvwxyz";
 
-// Convert base-X string to BigInt
+
 function parseInBase(s, base) {
     s = s.toLowerCase();
     let result = 0n;
@@ -18,7 +18,7 @@ function parseInBase(s, base) {
     return result;
 }
 
-// gcd for BigInt
+
 function gcd(a, b) {
     while (b !== 0n) {
         let t = a % b;
@@ -54,11 +54,11 @@ function div(a, b) {
     return makeFrac(a.num * b.den, a.den * b.num);
 }
 
-// Gaussian elimination using Rational Arithmetic
+
 function solve(matrix, rhs) {
     const n = matrix.length;
 
-    // Forward elimination
+    
     for (let col = 0; col < n; col++) {
         // Find pivot
         let pivot = col;
@@ -139,3 +139,4 @@ function main() {
 }
 
 main();
+
